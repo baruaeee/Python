@@ -2,11 +2,14 @@
 
 import scrapetube
 
-videos = scrapetube.get_channel("UCh4JH8axA_jUjB8YoRnm0cg")
+channel_ID = input("Enter Channel ID: ")
+file_name = input("File name with .asx: ")
+
+videos = scrapetube.get_channel(channel_ID)
 videos = list(videos)
 #videos = videos[::-1]
   
-with open('moviedome.asx', 'a') as file:
+with open(file_name, 'a') as file:
     for video in videos:
         file.write("<entry>\n")
         
